@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>File Upload</title>
+
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row mt-3">
+			<div class="col-md-6">
+				<img src="/static/img/DP.png" width="170" height="35"  class="responsive">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="card mt-4">
+					<div class="card-header" style="text-transform: uppercase;">File upload injection</div>
+					<div class="card-body">
+						<div class="col-md-6 offset-md-3 text-center mt-2">
+							<div class="alert {% if res.success %} alert-success {% elif res.message %} alert-danger {% endif %}" role="alert">
+								{% autoescape false %} {{res.message}} {% endautoescape %}
+							</div>
+						</div>
+						<form method="post" action="" enctype="multipart/form-data">
+							<div class="row mt-5 mb-5">
+								<div class="col-md-6 ml-3">
+	                				<input class="form-control" type="file" name="file"/>
+								</div>
+								<div class="col-md-3 col-sm-6 mt-3 offset-md-2 offset-sm-3">
+	               			    	<button style="cursor: pointer;" class="btn btn-primary btn-block btn-sm" type="submit">Upload</button>
+								</div>
+							</div>
+						</form>
+           			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
