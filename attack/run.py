@@ -8,7 +8,7 @@ import os
 import random
 import time
 
-URL = 'http://127.0.0.1:47525/'
+URL = 'http://127.0.0.1:5000/'
 
 def attack():
 	filename = str(random.randint(1, 1000)) + '.html'

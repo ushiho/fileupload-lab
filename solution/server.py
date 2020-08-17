@@ -48,6 +48,22 @@ def index():
     
     return render_template("./index.html", res=res)
 
+@app.route("/clear", methods=['GET'])
+def clear():
+    upload_dir = os.path.join(os.getcwd(), 'solution/uploads')
+    res = {}
+    try:
+        for filename in os.listdir(upload_dir):
+            file_path = os.path.join(upload_dir, filename)
+            os.unlink(file_path)
+        res['success'] = True
+        res['message'] = "Upload directory is clean"
+    except Exception as e:
+        print("Exception occured\n", e)
+        res['success'] = False
+        res['message'] = "An exception is occured!"
+    return render_template("./index.html", res=res)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("./404.html"), 404

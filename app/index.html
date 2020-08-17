@@ -20,7 +20,10 @@
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
 				<div class="card mt-4">
-					<div class="card-header" style="text-transform: uppercase;">File upload injection</div>
+					<div class="card-header">
+						<span style="text-transform: uppercase;">File upload injection</span>
+						<a href="/clear" style="float: right;width: 100px;cursor: pointer;color: #FFF" class="btn btn-danger btn-sm btn-block" title="Clear upload directory">Clear</a>
+					</div>
 					<div class="card-body">
 						<div class="col-md-6 offset-md-3 text-center mt-2">
 							<div class="alert {% if res.success %} alert-success {% elif res.message %} alert-danger {% endif %}" role="alert">
@@ -29,11 +32,11 @@
 						</div>
 						<form method="post" action="" enctype="multipart/form-data">
 							<div class="row mt-5 mb-5">
-								<div class="col-md-6 ml-3">
+								<div class="col-md-6 ml-3" style="margin-right: 58px;">
 	                				<input class="form-control" type="file" name="file" required />
 								</div>
-								<div class="col-md-3 col-sm-6 mt-3 offset-md-2 offset-sm-3">
-	               			    	<button style="cursor: pointer;" class="btn btn-primary btn-block btn-sm" type="submit">Upload</button>
+								<div class="col-md-2 col-sm-6 mt-3 offset-md-3 offset-sm-5">
+	               			    	<button style="cursor: pointer;margin-top: -10px;width: 100px;" class="btn btn-primary btn-block btn-sm" type="submit">Upload</button>
 								</div>
 							</div>
 						</form>
